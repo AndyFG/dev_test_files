@@ -1,0 +1,44 @@
+Development Test Phase II - PSD to HTML Conversion
+
+Convert the PSD file dev_test_web.psd into a HTML/CSS/JS website taking in consideration the following requirements: 
+
+- Create a public repo on your Github account and share the project URL
+- Use HTML5 / SCSS or LESS
+- The website should be responsive
+- The website must follow these coding standards:
+	. HTML Coding Standards https://github.com/xhtmlized/html-coding-standards
+	. CSS Coding Standards https://github.com/xhtmlized/css-coding-standards
+	. Javascript Coding Standards https://github.com/xhtmlized/js-coding-standards
+- Ensure the website works in the following browsers: 
+	. Safari (latest version)
+    . Firefox (latest version)
+	. Google Chrome (latest version)
+	. Internet Explorer 11
+	. Internet Explorer 8
+- Use only HTML, CSS, Javascript and PHP programming languages
+	
+Please feel free to use any other resource/framework you might find necessary to complete the test. 
+
+Test must be completed by Tuesday 31st 2:00pm. 
+
+Bonus Challenge 1
+- Show a popup containing a form at the moment the website loads
+- The form heading will read "Email Subscription"
+- The form will contain an email field and a submit button 
+- The submitted data will be stored locally without duplicated entries 
+- The popup will have a close button to hide the popup at any time. 
+
+Bonus Challenge 2
+- You must complete Bonus Challenge 1
+- Add a second step to the form containing 3 more fields: Full Name, Username and Password
+- All information should be storage locally
+- Create a new Login page under the url /user/login
+- The login page should contain a form asking with Username and Password
+- Once the user have entered the right credentials, the message "Welcome [Full Name]" should show, 
+  where [Full Name] is the full name of the current user
+  
+GOOD LUCK!!!
+
+
+
+
