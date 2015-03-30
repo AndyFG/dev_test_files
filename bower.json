@@ -1,0 +1,15 @@
+{
+  "name": "AndyFG/dev_test_files",
+  "version": "1.0",
+  "authors": [
+    "AndyFG <afgarabote@gmail.com>"
+  ],
+  "keywords": [
+    "test", "phase 2"
+  ],
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "font-awesome": "~4.3.0"
+  }
+}
