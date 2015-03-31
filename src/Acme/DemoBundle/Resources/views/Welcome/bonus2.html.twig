@@ -1,5 +1,7 @@
 {% extends 'AcmeDemoBundle:Welcome:bonus1.html.twig' %}
 
+{% block title 'Bonus 2' %}
+
 {% block bonus_description %}
 <li>You must complete Bonus Challenge 1</li>
 <li>Add a second step to the form containing 3 more fields: Full Name, Username and Password</li>
@@ -10,22 +12,23 @@
 {% endblock %}
 
 {% block modal_body %}
-    <div class="form-group{% if errors|length > 0 %} has-error{% endif %}">
+    {{ form_errors(form) }}
+    <div class="form-group">
         {{ form_label(form.email) }}
         {{ form_widget(form.email) }}
         {{ form_errors(form.email) }}
     </div>
-    <div class="form-group{% if errors|length > 0 %} has-error{% endif %}">
+    <div class="form-group">
         {{ form_label(form.username) }}
         {{ form_widget(form.username) }}
         {{ form_errors(form.username) }}
     </div>
-    <div class="form-group{% if errors|length > 0 %} has-error{% endif %}">
+    <div class="form-group">
         {{ form_label(form.fullName) }}
         {{ form_widget(form.fullName) }}
         {{ form_errors(form.fullName) }}
     </div>
-    <div class="form-group{% if errors|length > 0 %} has-error{% endif %}">
+    <div class="form-group">
         {{ form_label(form.password) }}
         {{ form_widget(form.password) }}
         {{ form_errors(form.password) }}
