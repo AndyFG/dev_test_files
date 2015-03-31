@@ -22,5 +22,68 @@
 {% endblock %}
 
 {% block content %}
+    <section id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
 
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div style="background-image: url({{ asset("local/images/carousel-01.png") }})" class="item active">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="carousel-content centered" style="margin-top: 265px;">
+                                <h2 class="animation animated-item-1">Powerful and Responsive Web Design</h2>
+
+                                <p class="animation animated-item-2">Pellentesque habitant morbi tristique senectus
+                                    et netus et malesuada fames ac turpis egestas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background-image: url({{ asset("local/images/carousel-01.png") }})" class="item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="carousel-content centered" style="margin-top: 265px;">
+                                <h2 class="animation animated-item-1">Powerful and Responsive Web Design</h2>
+
+                                <p class="animation animated-item-2">Pellentesque habitant morbi tristique senectus
+                                    et netus et malesuada fames ac turpis egestas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background-image: url({{ asset("local/images/carousel-01.png") }})" class="item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="carousel-content centered" style="margin-top: 265px;">
+                                <h2 class="animation animated-item-1">Powerful and Responsive Web Design</h2>
+
+                                <p class="animation animated-item-2">Pellentesque habitant morbi tristique senectus
+                                    et netus et malesuada fames ac turpis egestas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </section>
 {% endblock %}

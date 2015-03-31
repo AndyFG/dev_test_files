@@ -47,6 +47,7 @@
 
 .navbar-default {
     background-color: #002a5c;
+    border-bottom: none;
 }
 
 .navbar-default .navbar-nav > li > a {
