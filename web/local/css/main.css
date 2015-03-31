@@ -113,6 +113,7 @@ body {
 #headline {
     text-align: justify;
     margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 #headline .right-border {
@@ -206,4 +207,8 @@ a > h3:hover, a > h3:active {
 
 .img-footer2 {
     padding-top: 10px;
+}
+
+.user{
+    margin-top: 20px;
 }

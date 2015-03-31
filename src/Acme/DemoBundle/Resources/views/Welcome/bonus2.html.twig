@@ -2,13 +2,34 @@
 
 {% block title 'Bonus 2' %}
 
+{% block content_header_more %}
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="{{ path("_welcome") }}">About</a></li>
+                    <li class="right-border"></li>
+                    <li><a href="{{ path("_welcome") }}">Floor Plans</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ path("_welcome") }}">Location</a></li>
+                    <li class="right-border"></li>
+                    <li><a href="{{ path("_welcome") }}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block bonus_description %}
-<li>You must complete Bonus Challenge 1</li>
-<li>Add a second step to the form containing 3 more fields: Full Name, Username and Password</li>
-<li>All information should be storage locally</li>
-<li>Create a new Login page under the url /user/login</li>
-<li>The login page should contain a form asking with Username and Password</li>
-<li>Once the user have entered the right credentials, the message "Welcome [Full Name]" should show, where [Full Name] is the full name of the current user</li>
+    <li>You must complete Bonus Challenge 1</li>
+    <li>Add a second step to the form containing 3 more fields: Full Name, Username and Password</li>
+    <li>All information should be storage locally</li>
+    <li>Create a new Login page under the url /user/login</li>
+    <li>The login page should contain a form asking with Username and Password</li>
+    <li>Once the user have entered the right credentials, the message "Welcome [Full Name]" should show, where [Full
+        Name] is the full name of the current user
+    </li>
 {% endblock %}
 
 {% block modal_body %}

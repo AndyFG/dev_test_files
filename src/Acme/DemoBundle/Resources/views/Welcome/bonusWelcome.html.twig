@@ -2,6 +2,25 @@
 
 {% block title 'Welcome ...' %}
 
+{% block content_header_more %}
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="{{ path("_welcome") }}">About</a></li>
+                    <li class="right-border"></li>
+                    <li><a href="{{ path("_welcome") }}">Floor Plans</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ path("_welcome") }}">Location</a></li>
+                    <li class="right-border"></li>
+                    <li><a href="{{ path("_welcome") }}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-    Wwelcome {{ app.user }}
+    {% include "AcmeDemoBundle:Welcome:content.html.twig" %}
 {% endblock %}
