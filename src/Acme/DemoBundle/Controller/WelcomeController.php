@@ -45,7 +45,7 @@ class WelcomeController extends Controller
                 $em->persist($entity);
                 $em->flush();
 
-//                $this->get('session')->getFlashBag()->set('notice', 'Message sent!');
+                $this->get('session')->getFlashBag()->set('notice', 'Subscription sent!');
 
                 return new RedirectResponse($this->generateUrl('_list_bonus'));
             }
@@ -86,13 +86,18 @@ class WelcomeController extends Controller
         if ($request->isMethod('POST')) {
             $form->submit($request);
             if ($form->isValid()) {
+
+                $entity->setPlainPassword($entity->getPassword());
+                $passwd = $this->get('security.encoder_factory')->getEncoder($entity)->encodePassword($entity->getPassword(), $entity->getSalt());
+                $entity->setPassword($passwd);
+
                 $em = $this->get('doctrine.orm.entity_manager');
                 $em->persist($entity);
                 $em->flush();
 
-                $this->get('session')->getFlashBag()->set('notice', 'Message sent!');
+                $this->get('session')->getFlashBag()->set('notice', 'Information sent!');
 
-                return new RedirectResponse($this->generateUrl('_list_bonus'));
+                return new RedirectResponse($this->generateUrl('_demo_login'));
             }
         }
 
@@ -100,5 +105,14 @@ class WelcomeController extends Controller
             'form' => $form->createView(),
             'errors' => $form->getErrors()
         );
+    }
+
+    /**
+     * @Route("/user/welcome", name="_bonus_welcome")
+     * @Template()
+     */
+    public function bonusWelcomeAction()
+    {
+        return array();
     }
 }

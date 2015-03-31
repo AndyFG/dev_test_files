@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 /**
- * @Route("/demo/secured")
+ * @Route("/user")
  */
 class SecuredController extends Controller
 {
@@ -19,6 +19,8 @@ class SecuredController extends Controller
      */
     public function loginAction(Request $request)
     {
+        $entities = $this->getDoctrine()->getRepository('AcmeDemoBundle:User')->findAll();
+
         if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
             $error = $request->attributes->get(SecurityContext::AUTHENTICATION_ERROR);
         } else {
@@ -28,6 +30,7 @@ class SecuredController extends Controller
         return array(
             'last_username' => $request->getSession()->get(SecurityContext::LAST_USERNAME),
             'error'         => $error,
+            'entities'      => $entities
         );
     }
 
@@ -47,22 +50,4 @@ class SecuredController extends Controller
         // The security layer will intercept this request
     }
 
-    /**
-     * @Route("/hello", defaults={"name"="World"}),
-     * @Route("/hello/{name}", name="_demo_secured_hello")
-     * @Template()
-     */
-    public function helloAction($name)
-    {
-        return array('name' => $name);
-    }
-
-    /**
-     * @Route("/hello/admin/{name}", name="_demo_secured_hello_admin")
-     * @Template()
-     */
-    public function helloadminAction($name)
-    {
-        return array('name' => $name);
-    }
 }

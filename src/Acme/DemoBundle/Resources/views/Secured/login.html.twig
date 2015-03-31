@@ -1,35 +1,66 @@
 {% extends 'AcmeDemoBundle::layout.html.twig' %}
 
+{% block title 'Login' %}
+
 {% block content %}
-    <h1 class="title">Login</h1>
 
-    <p>
-        Choose between two default users: <em>user/userpass</em> <small>(ROLE_USER)</small> or <em>admin/adminpass</em> <small>(ROLE_ADMIN)</small>
-    </p>
-
-    {% if error %}
-        <div class="error">{{ error.message }}</div>
-    {% endif %}
-
-    <form action="{{ path("_security_check") }}" method="post" id="login">
-        <div>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+    <section id="headline">
+        <div class="container-fluid">
+            <div class="col-md-12">
+                <h1 class="page-header">{{ block('title') }}</h1>
+            </div>
         </div>
+        <div class="container">
+            <div class="col-md-6 right-border">
+                <p>Choose between this users: </p>
+                <table class="table table-responsive table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th width="20%">Username</th>
+                        <th width="15%">Password</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            <td>{{ entity.username }}</td>
+                            <td>{{ entity.plainPassword }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                {% if error %}
+                    <div class="error">{{ error.message }}</div>
+                {% endif %}
 
-        <div>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="_password" />
+                <form action="{{ path("_security_check") }}" method="post" id="login" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-md-2 control-label">Username</label>
+                        <div class="col-md-10">
+                            <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="col-md-2 control-label">Password</label>
+                        <div class="col-md-10">
+                            <input type="password" id="password" name="_password" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">
+                                Login
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
         </div>
+    </section>
 
-        <button type="submit" class="sf-button">
-            <span class="border-l">
-                <span class="border-r">
-                    <span class="btn-bg">Login</span>
-                </span>
-            </span>
-        </button>
-    </form>
 {% endblock %}
-
-{% set code = code(_self) %}

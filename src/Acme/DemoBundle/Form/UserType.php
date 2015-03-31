@@ -66,7 +66,8 @@ class UserType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Acme\DemoBundle\Entity\User'
+            'data_class' => 'Acme\DemoBundle\Entity\User',
+            'validation_groups' => array('registration', 'Default'),
         ));
     }
 
