@@ -22,10 +22,12 @@
                     </thead>
                     <tbody>
                     {% for entity in entities %}
-                        <tr>
-                            <td>{{ entity.username }}</td>
-                            <td>{{ entity.plainPassword }}</td>
-                        </tr>
+                        {% if entity.username %}
+                            <tr>
+                                <td>{{ entity.username }}</td>
+                                <td>{{ entity.plainPassword }}</td>
+                            </tr>
+                        {% endif %}
                     {% endfor %}
                     </tbody>
                 </table>
@@ -38,15 +40,18 @@
                 <form action="{{ path("_security_check") }}" method="post" id="login" class="form-horizontal">
                     <div class="form-group">
                         <label for="username" class="col-md-2 control-label">Username</label>
+
                         <div class="col-md-10">
-                            <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" />
+                            <input type="text" id="username" name="_username" value="{{ last_username }}"
+                                   class="form-control"/>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="password" class="col-md-2 control-label">Password</label>
+
                         <div class="col-md-10">
-                            <input type="password" id="password" name="_password" class="form-control" />
+                            <input type="password" id="password" name="_password" class="form-control"/>
                         </div>
                     </div>
 

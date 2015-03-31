@@ -58,7 +58,9 @@
         </div>
     {% endfor %}
 
-    {% block content %}{% endblock %}
+    <div id="body">
+        {% block content %}{% endblock %}
+    </div>
 
     {% block footer %}
         <footer role="contentinfo" class="panel-footer">
@@ -91,4 +93,12 @@
  {% block javascripts %}
      <script type="text/javascript" src="{{ asset("assets/jquery/dist/jquery.min.js") }}"></script>
      <script type="text/javascript" src="{{ asset("assets/bootstrap/dist/js/bootstrap.min.js") }}"></script>
+     <script>
+         $(window).resize(function () {
+             $('#body').css('min-height', ($(window).height() - 129) + 'px');
+         });
+         $(window).load(function () {
+             $('#body').css('min-height', ($(window).height() - 129) + 'px');
+         })
+     </script>
  {% endblock %}
