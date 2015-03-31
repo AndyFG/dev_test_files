@@ -83,6 +83,10 @@ body {
         line-height: 1.2em;
         text-align: left;
     }
+
+    .right-border {
+        border-right: 0
+    }
 }
 
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
@@ -167,6 +171,7 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
 
 .panel-footer {
     background-color: #002a5c;
+    text-align: center;
 }
 
 a > h3 {
@@ -175,4 +180,30 @@ a > h3 {
 
 a > h3:hover, a > h3:active {
     color: firebrick;
+}
+
+.panel-footer .link {
+    color: #ffffff;
+    display: block;
+    line-height: 1em;
+    padding-top: 10px;
+    position: relative;
+}
+
+.summit {
+    font-size: 16px !important;
+    font-weight: bold;
+}
+
+.panel-footer .link:hover, .panel-footer .link:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.img-footer {
+    padding-top: 15px;
+}
+
+.img-footer2 {
+    padding-top: 10px;
 }

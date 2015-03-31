@@ -64,9 +64,25 @@
         <footer role="contentinfo" class="panel-footer">
             <div class="row">
                 <div class="col-md-6 text-right right-border">
-                    <a href="">summitsothebysrealty.com</a>
+                    <div class="col-md-4 col-md-offset-6 col-sm-6">
+                        <a class="link" href="">summitsothebysrealty.com</a>
+                    </div>
+                    <div class="col-md-2 col-sm-6">
+                        <a class="link summit" href="">Summit</a>
+                    </div>
                 </div>
-                <div class="col-md-6 text-left"></div>
+                <div class="col-md-6 text-left">
+                    <div class="col-md-2">
+                        <a href="">
+                            <img class="img-responsive img-footer" src="{{ asset("local/images/sotheby.jpg") }}">
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="">
+                            <img class="img-responsive img-footer2" src="{{ asset("local/images/footer.png") }}">
+                        </a>
+                    </div>
+                </div>
             </div>
         </footer>
     {% endblock %}
