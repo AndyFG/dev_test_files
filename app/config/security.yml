@@ -11,7 +11,7 @@ security:
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
-        custom_provider:
+        default_provider:
             id: user_provider
 #        in_memory:
 #            memory:
@@ -34,7 +34,7 @@ security:
                 check_path: _security_check
                 login_path: _demo_login
                 default_target_path: _bonus_welcome
-                provider: custom_provider
+                provider: default_provider
             logout:
                 path:   _demo_logout
                 target: _welcome

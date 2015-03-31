@@ -56,14 +56,5 @@
         "branch-alias": {
             "dev-master": "2.3-dev"
         }
-    },
-    "repositories": [
-        {
-            "packagist": false
-        },
-        {
-            "type": "composer",
-            "url": "http://composer.prod.uci.cu:8080"
-        }
-    ]
+    }
 }
