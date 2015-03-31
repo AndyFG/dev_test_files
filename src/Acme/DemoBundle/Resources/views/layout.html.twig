@@ -60,12 +60,16 @@
 
     {% block content %}{% endblock %}
 
-    {% if code is defined %}
-        <h2>Code behind this page</h2>
-        <div class="block">
-            <div class="symfony-content">{{ code|raw }}</div>
-        </div>
-    {% endif %}
+    {% block footer %}
+        <footer role="contentinfo" class="panel-footer">
+            <div class="row">
+                <div class="col-md-6 text-right right-border">
+                    <a href="">summitsothebysrealty.com</a>
+                </div>
+                <div class="col-md-6 text-left"></div>
+            </div>
+        </footer>
+    {% endblock %}
 {% endblock %}
 
  {% block javascripts %}
