@@ -1,0 +1,41 @@
+{% extends 'AcmeDemoBundle::layout.html.twig' %}
+
+{% block content_header_more %}
+    <li><a href="{{ path('_bonus_1') }}">BONUS 1</a></li>
+{% endblock %}
+
+{% block content %}
+    <table class="records_list">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Fullname</th>
+            <th>Password</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.id }}</td>
+                <td>{{ entity.username }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.fullName }}</td>
+                <td>{{ entity.password }}</td>
+                <td>
+                    {#<ul>#}
+                        {#<li>#}
+                            {#<a href="{{ path('user_show', { 'id': entity.id }) }}">show</a>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="{{ path('user_edit', { 'id': entity.id }) }}">edit</a>#}
+                        {#</li>#}
+                    {#</ul>#}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

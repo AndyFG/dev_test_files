@@ -1,9 +1,53 @@
 {% extends 'AcmeDemoBundle::layout.html.twig' %}
 
-{% block content_header_more %}
-    <li><a href="{{ path('_welcome') }}">Demo Home</a></li>
-{% endblock %}
-
 {% block content %}
     BONUS 1
+
+    <ul>
+        {% block bonus_description %}
+            <li>Show a popup containing a form at the moment the website loads</li>
+            <li>The form heading will read "Email Subscription"</li>
+            <li>The form will contain an email field and a submit button</li>
+            <li>The submitted data will be stored locally without duplicated entries</li>
+            <li>The popup will have a close button to hide the popup at any time.</li>
+        {% endblock %}
+    </ul>
+
+    <div class="modal fade" id="modal-bonus">
+        <div class="modal-dialog">
+            {{ form_start(form) }}
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Email Subscription</h4>
+                </div>
+                <div class="modal-body">
+                    {% block modal_body %}
+                        <div class="form-group{% if errors|length > 0 %} has-error{% endif %}">
+                            {{ form_label(form.email) }}
+                            {{ form_widget(form.email) }}
+                            {{ form_errors(form.email) }}
+                        </div>
+                    {% endblock %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    {{ form_widget(form.send) }}
+                    {{ form_rest(form) }}
+                </div>
+            </div><!-- /.modal-content -->
+            {{ form_end(form) }}
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/bootstrap/js/modal.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#modal-bonus').modal('show');
+        });
+    </script>
 {% endblock %}
